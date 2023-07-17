@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="78" height="72" viewBox="0 0 78 72">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_39" data-name="Rectangle 39" width="65" height="65" fill="none" stroke="#68cae1" stroke-width="2"/>
+    </clipPath>
+  </defs>
+  <g id="Group_482" data-name="Group 482" transform="translate(-698 -1533)">
+    <g id="Group_7" data-name="Group 7" transform="translate(705 1537)">
+      <g id="Group_6" data-name="Group 6" clip-path="url(#clip-path)">
+        <path id="Path_22" data-name="Path 22" d="M49.517,34.7V13.027a.615.615,0,0,0-.206-.458L37.822,2.167A.652.652,0,0,0,37.387,2H2.641A.633.633,0,0,0,2,2.626V61.4a.633.633,0,0,0,.641.626H41.49" transform="translate(-0.668 -0.668)" fill="none" stroke="#68cae1" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+        <path id="Path_23" data-name="Path 23" d="M67.371,12.754H56.133a.633.633,0,0,1-.641-.625V2" transform="translate(-18.522 -0.668)" fill="none" stroke="#68cae1" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+        <ellipse id="Ellipse_5" data-name="Ellipse 5" cx="14.819" cy="14.819" rx="14.819" ry="14.819" transform="translate(34.03 34.03)" fill="none" stroke="#68cae1" stroke-miterlimit="10" stroke-width="2"/>
+        <line id="Line_4" data-name="Line 4" x2="26.978" transform="translate(11.602 20.089)" fill="none" stroke="#68cae1" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+        <line id="Line_5" data-name="Line 5" x2="26.978" transform="translate(11.602 29.78)" fill="none" stroke="#68cae1" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+        <line id="Line_6" data-name="Line 6" x2="14.752" transform="translate(11.602 38.918)" fill="none" stroke="#68cae1" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+        <path id="Path_24" data-name="Path 24" d="M64.523,70.677,69.2,76.338l8-11.076" transform="translate(-21.536 -21.783)" fill="none" stroke="#68cae1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+    </g>
+    <rect id="Rectangle_306" data-name="Rectangle 306" width="78" height="72" transform="translate(698 1533)" fill="none"/>
+  </g>
+</svg>
