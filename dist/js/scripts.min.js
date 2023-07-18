@@ -16,101 +16,7 @@ function allLozadImg() {
 
 allLozadImg();
 
-//add counting number to show delay speed
-var counterContainer = [...document.querySelectorAll('.counting-delay')];
 
-function addCoutingDelay() {
-    if (counterContainer.length) {
-        counterContainer.forEach((cont) => {
-            var anims = [...cont.children];
-            console.log(anims);
-            anims.forEach((btn, k) => {
-                btn.classList.add('anim');
-                btn.dataset.animDelay = k * 100;
-            })
-        })
-    }
-}
-
-addCoutingDelay();
-
-
-// scroll animations
-var anim = document.querySelectorAll('.anim')
-
-function scrollAnimations() {
-    if (anim.length) {
-        var observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                var el = entry.target
-                if (entry.isIntersecting) {
-                    if (el.classList.contains('anim-js')) {
-
-                    } else {
-                        el.style.animationDelay = el.dataset.animDelay + 'ms';
-                        el.style.animationDuration = el.dataset.animDuration + 'ms';
-                        el.style.animationName = el.dataset.anim;
-                    }
-
-
-                    el.classList.add('done');
-                    observer.unobserve(entry.target);
-                }
-
-            })
-        }, {threshold: .5});
-        if (window.innerWidth > 991) {
-            anim.forEach(animate => {
-                observer.observe(animate)
-            })
-        } else {
-
-            anim.forEach(animate => {
-
-                observer.observe(animate)
-
-
-            })
-        }
-    }
-}
-
-
-scrollAnimations();
-
-
-function progressBarScroll(btn, numb, perc) {
-    if (document.querySelector(`.progress`)) {
-        document.querySelector(`.progress--${numb} .line p`).style.width = perc + "%";
-    }
-
-}
-
-let pageSections = [...document.querySelectorAll('.page-section')];
-
-function getSectionScrolled() {
-    if (pageSections.length) {
-        pageSections.forEach((btn, k) => {
-            let number = btn.dataset.sec;
-            let scrollet = btn.getBoundingClientRect().top;
-            let heigh = btn.offsetHeight;
-            let visible = heigh - scrollet;
-            let percentage = (visible / heigh) * 100;
-            btn.dataset.part = percentage;
-            if (percentage >= 0) {
-
-            } else {
-                percentage = 0;
-            }
-
-            // console.log(scrollet + ' -- scroll to top == ' + number);
-            progressBarScroll(btn, number, percentage);
-        })
-    }
-}
-
-// Get all sections that have an ID defined
-const sections = document.querySelectorAll(".page-section");
 
 // Add an event listener listening for scroll
 
@@ -134,17 +40,29 @@ function navHighlighter() {
         }
     });
 }
+//scroll to function
 
-let progressBtns = [...document.querySelectorAll('.progress')];
+
+let progressBtns = [...document.querySelectorAll('.scroll-to')];
 
 function goToSectionProg() {
     if (progressBtns.length) {
         progressBtns.forEach((btn) => {
-            let numb = btn.dataset.prog;
-            let el = document.querySelector(`section[data-sec="${numb}"]`);
+            let numb = btn.dataset.to;
+            let el = document.querySelector(`.${numb}`);
+            let currentOffset = 0;
+            let dataDesk = btn.dataset.offsetDesk;
+            let dataMob = btn.dataset.offsetMob;
+            if (window.innerWidth > 767) {
+                currentOffset = dataDesk;
+            } else {
+                currentOffset = dataMob;
+            }
+            // console.log(currentOffset);
             btn.addEventListener('click', () => {
+                console.log(currentOffset);
                 $([document.documentElement, document.body]).animate({
-                    scrollTop: $(el).offset().top
+                    scrollTop: $(el).offset().top + Number(currentOffset)
                 }, 500);
             })
         })
@@ -153,95 +71,46 @@ function goToSectionProg() {
 
 goToSectionProg();
 
-let bgGlobal = document.querySelector('.background-global');
 
-function getFullHeightOfPage() {
-    if (bgGlobal) {
-        let fullHeight = document.body.offsetHeight;
-        bgGlobal.style.height = fullHeight + 'px';
-        if (window.innerWidth < 767) {
-            setTimeout(() => {
-                let fullHeight = document.body.offsetHeight;
-                bgGlobal.style.height = fullHeight + 'px';
-            }, 500)
-        }
-    }
-}
+//scroll to function
 
-getFullHeightOfPage();
 
-function progressBarScrollFull() {
-    if (document.querySelector(".full-progress p")) {
-        let winScroll = document.body.scrollTop || document.documentElement.scrollTop,
-            height = document.documentElement.scrollHeight - document.documentElement.clientHeight,
-            scrolled = (winScroll / height) * 100;
-        document.querySelector(".full-progress p").style.width = scrolled + "%";
-    }
-
-}
-
-window.onscroll = function () {
-    getSectionScrolled();
-    navHighlighter();
-    progressBarScrollFull()
-};
-window.onresize = function () {
-    getFullHeightOfPage();
-};
-progressBarScrollFull()
-getSectionScrolled();
 
 //sliders
-let clientsSlides = [...document.querySelectorAll('.our-clients__slider')];
+let clientsSlides = [...document.querySelectorAll('.tomato-slider')];
 
 function clientsSlider() {
     if (!clientsSlides.length) {
 
     } else {
-        clientsSlides.forEach((sld) => {
-            let sldCont = sld.querySelector('.our-clients__slides-cont');
-            let sldScrl = sld.querySelector('.bar-cont');
-            let sldPrev = sld.querySelector('.btn-back');
-            let sldNext = sld.querySelector('.btn-next');
+        if (window.innerWidth > 767) {
 
-            const swiper2 = new Swiper(sldCont, {
-                // Optional parameters
-                loop: false,
-
-                slidesPerView: 1,
-                speed: 600,
-                direction: "horizontal",
-                spaceBetween: 0,
-                freeMode: false,
-                mousewheel: true,
-                navigation: {
-                    nextEl: sldNext,
-                    prevEl: sldPrev,
-                },
-                scrollbar: {
-                    el: sldScrl,
-                    hide: false,
-                    draggable: true,
-                },
-                breakpoints: {
-                    767: {
-                        slidesPerView: 1,
-
-                        // freeMode: true,
-                        // mousewheel: true,
-
-                        forceToAxis: false,
-                        direction: 'vertical',
-                    }
-                }
-                // autoplay: {
-                //     delay: 4000,
-                //     pauseOnMouseEnter: true,
-                // },
+        } else {
+            clientsSlides.forEach((sld) => {
+                let sldCont = sld.querySelector('.swiper');
 
 
-            });
-        })
+                const swiper2 = new Swiper(sldCont, {
+                    // Optional parameters
+                    loop: false,
+
+                    slidesPerView: 'auto',
+                    speed: 600,
+                    direction: "horizontal",
+                    spaceBetween: 0,
+                    freeMode: false,
+                    mousewheel: true,
+                    autoplay: {
+                        delay: 2200,
+                    },
+                    navigation: false,
+
+
+
+                });
+            })
+        }
+
     }
 }
 
@@ -249,206 +118,59 @@ clientsSlider();
 
 
 
-//new 23.01
-let servicesSliders = [...document.querySelectorAll('.services__img-single')];
-
-function startServicesSliders() {
-    if (!servicesSliders.length) {
-
-    } else {
-        servicesSliders.forEach((sld) => {
-            let sldCont = sld.querySelector('.services__img-cont');
-            let sldScrl = sld.querySelector('.navi');
-            let sldPrev = sld.querySelector('.btn-sld--prev');
-            let sldNext = sld.querySelector('.btn-sld--next');
-
-            const swiper2 = new Swiper(sldCont, {
-                // Optional parameters
-                loop: false,
-
-                slidesPerView: 1,
-                speed: 600,
-                direction: "horizontal",
-                spaceBetween: 0,
-                freeMode: false,
-                mousewheel: true,
-                navigation: {
-                    nextEl: sldNext,
-                    prevEl: sldPrev,
-                },
-                scrollbar: {
-                    el: sldScrl,
-                    hide: false,
-                    draggable: true,
-                },
-
-
-            });
-        })
-    }
-}
-
-startServicesSliders();
-
-
-
-//new 23.01
-
 //sliders
 
-// change text class li
 
-let liText = [...document.querySelectorAll('.service__text ul li')];
-let liSliders = [...document.querySelectorAll('.services__img-single')];
+//open video modal
+
+let videoOpener = document.querySelector('.play-btn');
+let videoModal = document.querySelector('.modal-window--video');
+let closeModal = document.querySelector('.close-modal');
 
 
-function changeActiveLi() {
-    if (liText.length) {
+function ifVideoOpenedOnPage() {
+    if(!videoOpener) {
 
-        liText.forEach((btn, k) => {
-            btn.addEventListener('click', () => {
-                if (btn.classList.contains('active')) {
+    } else {
+        videoOpener.addEventListener('click', (e) => {
+            e.preventDefault();
+            let dataType = videoOpener.dataset.videoType;
+            let dataSrc = videoOpener.dataset.videoModal;
 
-                } else {
-                    liText.forEach((btn2) => {
-                        btn2.classList.remove('active');
-                    });
-                    liSliders.forEach((btn3) => {
-                        btn3.classList.remove('active');
-                    });
-                    liSliders[k].classList.add('active');
-                    btn.classList.add('active');
-                }
-            });
+            let videoContainer = videoModal.querySelector(`.iframe--${dataType}`);
+            videoContainer.classList.add('active');
+            videoContainer.src = dataSrc;
+
+            document.body.classList.add('no-scroll');
+            videoModal.classList.add('open');
+        });
+
+        closeModal.addEventListener('click', (e) => {
+            e.stopPropagation();
+            closeModal.closest('.modal-window').classList.remove('open');
+            document.body.classList.remove('no-scroll');
+            let videoContainer = videoModal.querySelector(`.iframe.active`);
+            videoContainer.classList.remove('active');
+            videoContainer.src = '';
 
         });
-    }
-}
-
-changeActiveLi();
-
-// change text class li
-
-
-let btnVideoPlay = document.getElementById('play-btn');
-
-function checkWhatVideoType() {
-    if (btnVideoPlay) {
-        if (btnVideoPlay.classList.contains('vimeo')) {
-
-            var player2 = new Vimeo.Player(document.querySelector('#vimeo-player'));
-            btnVideoPlay.addEventListener('click', () => {
-                if (btnVideoPlay.classList.contains('pause')) {
-                    player2.pause();
-                    btnVideoPlay.classList.remove('pause');
-                    document.querySelector('.video-box').classList.remove('hide-poster');
-                } else {
-                    player2.play();
-                    btnVideoPlay.classList.add('pause');
-                    document.querySelector('.video-box').classList.add('hide-poster');
-                }
-            });
-        } else {
-            var tag = document.createElement("script");
-            tag.src = "//www.youtube.com/player_api";
-            var firstScriptTag = document.getElementsByTagName("script")[0];
-            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-            var player;
-
-// this function gets called when API is ready to use
-            function onYouTubePlayerAPIReady() {
-                // create the global player from the specific iframe (#video)
-                player = new YT.Player("video-player", {
-                    events: {
-                        // call this function when player is ready to use
-                        onReady: onPlayerReady
-                    }
-                });
-            }
-
-            function onPlayerReady(event) {
-                // bind events
-                var playButton = document.getElementById("play-btn");
-                playButton.addEventListener("click", function () {
-
-                    if (playButton.classList.contains('pause')) {
-                        player.pauseVideo();
-                        playButton.classList.remove('pause');
-                        document.querySelector('.video-box').classList.remove('hide-poster');
-                    } else {
-                        player.playVideo();
-                        playButton.classList.add('pause');
-                        document.querySelector('.video-box').classList.add('hide-poster');
-                    }
-                });
-
-
-            }
-
-            onYouTubePlayerAPIReady();
-        }
-    }
-
-}
-
-checkWhatVideoType();
-// Inject YouTube API script
-
-
-var isInViewport = function (elem) {
-    var bounding = elem.getBoundingClientRect();
-    return (
-        bounding.top >= 0 &&
-        bounding.left >= 0 &&
-        bounding.bottom - 160 <= (window.innerHeight || document.documentElement.clientHeight) &&
-        bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-};
-$(window).scroll(function (e) {
-    $el = $('.header');
-    $el.toggleClass('header-fixed', $(this).scrollTop() > 32);
-
-});
-let scrollItem = document.querySelector('.contacts-footer');
-
-function ifHaveScrollItem() {
-    if (scrollItem) {
-        $(window).scroll(function (e) {
-            $el = $('.footer');
-            $el.toggleClass('scroll', $(this).scrollTop() > 32);
-
+        videoModal.addEventListener('click', () => {
+            videoModal.classList.remove('open');
+            document.body.classList.remove('no-scroll');
+            let videoContainer = videoModal.querySelector(`.iframe.active`);
+            console.log(videoContainer);
+            videoContainer.classList.remove('active');
+            videoContainer.src = '';
         });
-        window.addEventListener('scroll', function (event) {
-            if (isInViewport(scrollItem)) {
-                document.querySelector('.footer').classList.add('hide');
-            } else {
-                document.querySelector('.footer').classList.remove('hide');
-
-            }
-        }, false);
-    }
-}
-
-ifHaveScrollItem();
-
-let footHiden = [...document.querySelectorAll('.footer-hidden > a')];
-
-function scrollToWhat() {
-    if (footHiden.length) {
-        footHiden.forEach((btn) => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                $([document.documentElement, document.body]).animate({
-                    scrollTop: $(".contact-us__soc").offset().top - 100
-                }, 500);
-            })
+        videoModal.querySelector('.modal-container').addEventListener('click', (e) => {
+            e.stopPropagation();
         })
     }
 }
+ifVideoOpenedOnPage();
 
-scrollToWhat();
+
+
 
 
 

@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
 
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@100;200;300;400;500;600;700;800;900&display=swap"
           rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="./css/main.min.css">
     <script src="https://player.vimeo.com/api/player.js"></script>
 </head>
@@ -24,7 +25,7 @@
     <img src="./img/logom.svg" alt="">
 </div>
 
-<div class="top-btn go-to" data-to="footer">
+<div class="top-btn scroll-to" data-to="footer" data-offset-desk="0" data-offset-mod="0">
     <p>ליצירת קשר</p>
 </div>
 
@@ -43,6 +44,9 @@
         <div class="img">
             <img class="lazyload" data-src="./img/rocks-img.png" alt="">
         </div>
+        <div class="bg-mob">
+            <img class="lazyload" data-src="./img/rockmobbg.png" alt="">
+        </div>
     </div>
     <div class="hero-txt">
         <p>לקראת עונת הגידול הקרובה <br>
@@ -54,7 +58,7 @@
             לאורך כל העונה</p>
     </div>
 
-    <div class="btn-scroll" data-to="types-section">
+    <div class="btn-scroll scroll-to" data-to="types-section" data-offset-desk="0" data-offset-mod="0">
         <div class="img">
             <img src="./img/scrbtm.svg" alt="">
         </div>
@@ -66,21 +70,37 @@
                     <div class="img">
                         <img src="./img/tomato_sizes3.png" alt="">
                     </div>
+                    <div class="img2">
+                        <img src="./img/tommob1.png" alt="">
+                    </div>
+                    <p>איקראם</p>
                 </div>
                 <div class="swiper-slide">
                     <div class="img">
                         <img src="./img/tomato_sizes4.png" alt="">
                     </div>
+                    <div class="img2">
+                        <img src="./img/tommob2.png" alt="">
+                    </div>
+                    <p>לנסור</p>
                 </div>
                 <div class="swiper-slide">
                     <div class="img">
                         <img src="./img/tomato_sizes2.png" alt="">
                     </div>
+                    <div class="img2">
+                        <img src="./img/tommob3.png" alt="">
+                    </div>
+                    <p>טילקראם</p>
                 </div>
                 <div class="swiper-slide">
                     <div class="img">
                         <img src="./img/tomato_sizes.png" alt="">
                     </div>
+                    <div class="img2">
+                        <img src="./img/tommob4.png" alt="">
+                    </div>
+                    <p>קורדיאל</p>
                 </div>
             </div>
         </div>
@@ -92,7 +112,9 @@
     <div class="single-types">
         <div class="txt">
             <span>אגרונומים 4X4 ‏</span>
-            <p></p>
+            <p>האגרונומים המקצועיים שלנו <br> ילוו אותך בשטח מהרגע <br> הראשון לאורך כל תהליך <br> הגידול, ויהיו
+                זמינים עבורך .לכל
+                בעיה ולכל שאלה</p>
         </div>
 
         <div class="round">
@@ -124,7 +146,10 @@
     <div class="single-types">
         <div class="txt">
             <span>גנטיקה 4X4</span>
-            <p></p>
+            <p>,איקראם, טילקראם<br>
+                .לנסור וקורדיאל <br>
+                זני עגבניה יציבים <br>
+                .המבוקשים ביותר בשוק</p>
         </div>
 
         <div class="round">
@@ -156,7 +181,8 @@
     <div class="single-types">
         <div class="txt">
             <span>‏פתרונות גידול 4X4</span>
-            <p></p>
+            <p>כנות להרכבה, הדרכות מקצועיות, כנסים ופרוטוקול גידול מלא, הם רק חלק ממגוון פתרונות הגידול שאנחנו
+                מעניקים לך במסגרת התמיכה .האגרוטכנית</p>
         </div>
 
         <div class="round">
@@ -187,7 +213,10 @@
     <div class="single-types">
         <div class="txt">
             <span>‏טכנולוגיה 4X4</span>
-            <p></p>
+            <p>מזג אוויר, כמות דשן ואיכות מים, כבר לא יהיו מכשול גדול בגידולי העגבנייה, בזכות תמונת המצב GROFIT
+                המלאה של
+                מערכת תוכל לחסוך בהוצאות הגידול וליהנות מנתונים תומכי <br>
+                .החלטה בזמן אמת</p>
         </div>
 
         <div class="round">
@@ -217,7 +246,7 @@
         </div>
     </div>
 
-    <div class="btn-scroll" data-to="video-section">
+    <div class="btn-scroll scroll-to" data-to="video-section" data-offset-desk="95" data-offset-mod="0">
         <div class="img">
             <img src="./img/scrbtm.svg" alt="">
         </div>
@@ -227,6 +256,9 @@
 <section class="video-section">
     <div class="bg">
         <img src="./img/pathvideo.svg" alt="">
+    </div>
+    <div class="bg2">
+        <img src="./img/bg-video2.svg" alt="">
     </div>
     <div class="video-wrapper">
         <div class="txt">
@@ -238,13 +270,14 @@
             <div class="img">
                 <img class="lazyload" data-src="./img/video-img.jpg" alt="">
             </div>
-            <div class="play-btn">
+            <div class="play-btn" data-video-type="youtube"
+                 data-video-modal="https://www.youtube.com/embed/dQw4w9WgXcQ">
                 <img src="./img/play-tri.svg" alt="">
             </div>
         </div>
 
     </div>
-    <div class="btn-scroll" data-to="video-section">
+    <div class="btn-scroll scroll-to" data-to="our-models" data-offset-desk="0" data-offset-mod="0">
         <div class="img">
             <img src="./img/scrbtm.svg" alt="">
         </div>
@@ -254,6 +287,9 @@
     <div class="bg">
         <img class="lazyload" data-src="./img/models-bg.jpg" alt="">
     </div>
+    <div class="bg2">
+        <img class="lazyload" data-src="./img/models-bg2.jpg" alt="">
+    </div>
     <div class="our-models__cont">
         <h2> דגמי ה- 4X4 שלנו </h2>
 
@@ -261,6 +297,9 @@
             <div class="single-model">
                 <div class="bgs">
                     <img class="lazyload" data-src="./img/mod1.jpg" alt="">
+                </div>
+                <div class="bgs2">
+                    <img class="lazyload" data-src="./img/mod11.jpg" alt="">
                 </div>
 
                 <div class="single-model__cont">
@@ -278,6 +317,9 @@
                 <div class="bgs">
                     <img class="lazyload" data-src="./img/mod2.jpg" alt="">
                 </div>
+                <div class="bgs2">
+                    <img class="lazyload" data-src="./img/mod21.jpg" alt="">
+                </div>
                 <div class="single-model__cont">
                     <p>זן <br>
                         קורדיאל</p>
@@ -291,6 +333,9 @@
                 <div class="bgs">
                     <img class="lazyload" data-src="./img/mod3.jpg" alt="">
                 </div>
+                <div class="bgs2">
+                    <img class="lazyload" data-src="./img/mod31.jpg" alt="">
+                </div>
                 <div class="single-model__cont">
                     <p>זן <br>
                         לנסור</p>
@@ -303,6 +348,9 @@
             <div class="single-model">
                 <div class="bgs">
                     <img class="lazyload" data-src="./img/mod4.jpg" alt="">
+                </div>
+                <div class="bgs2">
+                    <img class="lazyload" data-src="./img/mod41.jpg" alt="">
                 </div>
                 <div class="single-model__cont">
                     <p>זן <br>
@@ -319,6 +367,118 @@
     </div>
 </section>
 
+<section class="tomato-structure">
+    <div class="btn-scroll scroll-to top" data-to="tomato-structure" data-offset-desk="70" data-offset-mod="0">
+        <div class="img">
+            <img src="./img/scrbtm.svg" alt="">
+        </div>
+    </div>
+    <div class="bg">
+        <img class="lazyload" data-src="./img/white-round.svg" alt="">
+    </div>
+
+    <div class="big-tomat">
+        <div class="img">
+            <img class="lazyload" data-src="./img/big-tomat-stru.png" alt="">
+        </div>
+        <div class="tomat-infos">
+            <p>מוצקות מנצחת</p>
+            <p>אחידות פרי מצויינת</p>
+            <p>צבע אדום עז</p>
+            <p>חיי מדף ארוכים</p>
+        </div>
+    </div>
+    <div class="btn-scroll scroll-to bot" data-to="contacts-section" data-offset-desk="150" data-offset-mod="0">
+        <div class="img">
+            <img src="./img/scrbtm.svg" alt="">
+        </div>
+    </div>
+</section>
+
+<section class="contacts-section">
+    <div class="bg">
+        <img class="lazyload" data-src="./img/orange-path1.svg" alt="">
+    </div>
+    <div class="bg2">
+        <img class="lazyload" data-src="./img/orange-path2.svg" alt="">
+    </div>
+
+    <div class="contacts-block">
+        <div class="txt">
+            <p>צא לשטח עם ה-</p>
+            <span>4X4</span>
+        </div>
+        <div class="text">
+            <p>של זרעים גדרה-סינג'נטה</p>
+            <span>פנה אלינו ושים גז בגידול העגבניות בעונה הקרובה</span>
+        </div>
+        <div class="btns">
+            <a href="" class="link-btn">
+                <p>לוואטסאפ ישיר לאגרונום שלנו חן</p>
+                <div class="img">
+                    <img src="./img/whatsic.svg" alt="">
+                </div>
+            </a>
+            <a href="" class="link-btn">
+                <p>לוואטסאפ ישיר לאגרונום שלנו גברי</p>
+                <div class="img">
+                    <img src="./img/whatsic.svg" alt="">
+                </div>
+            </a>
+        </div>
+        <div class="btns2">
+            <a href="" class="link-btn">
+                <p>לאגרונום שלנו גברי</p>
+                <div class="img">
+                    <img src="./img/whatsic.svg" alt="">
+                </div>
+            </a>
+            <a href="" class="link-btn">
+                <p>לאגרונום שלנו חן</p>
+                <div class="img">
+                    <img src="./img/whatsic.svg" alt="">
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <p>כל המידע המופיע בפרסום זה אינו מהווה יעוץ כלשהו ואינו מהווה תחליף ליעוץ מקצועי. תנאים ונסיבות בשטחי הגידול
+        משפיעים במידה רבה על התוצאות הסופיות של הגידול. לפיכך, זרעים גדרה לא תישא בכל אחריות לתוצאות הגידול. | ©התמונות
+        בפרסום זה הנן להמחשה בלבד. | ט.ל.ח.</p>
+    <div class="bot">
+        <p>קריאייטיב, עיצוב ותוכן >> אהוי קריאייטיב Ahoy Creative</p>
+        <p> כל הזכויות שמורות לזרעים גדרה בע"מ 2023 © </p>
+        <a href="">| www.zeraim.com</a>
+    </div>
+</footer>
+
+
+<div class="modal-window modal-window--video">
+    <div class="modal-container">
+        <div class="embed-container">
+            <iframe class="iframe iframe--youtube " width="100%" height="100%"
+                    src="" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen=""></iframe>
+            <iframe class="iframe iframe--vimeo" src="" width="100%" height="100%" frameborder="0"
+                    allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>
+            <video class="iframe iframe--video" style="" src="./img/videoplayback.mp4" controls="" playsinline=""
+                   type="video/mp4" poster=""></video>
+
+
+        </div>
+
+
+    </div>
+    <div class="close-modal">
+        <span></span>
+        <span></span>
+    </div>
+
+</div>
+
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
 
@@ -326,7 +486,7 @@
         src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
         crossorigin="anonymous"></script>
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
 
 <script type="text/javascript" class="main-script" src="./js/scripts.min.js"></script>
