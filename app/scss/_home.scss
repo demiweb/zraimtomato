@@ -378,6 +378,10 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  &.anim {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
 
   &:nth-child(1) {
     margin-left: 1.0938vw;

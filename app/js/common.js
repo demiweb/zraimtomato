@@ -17,6 +17,58 @@ function allLozadImg() {
 allLozadImg();
 
 
+// scroll animations
+var anim = document.querySelectorAll('.anim')
+
+function scrollAnimations() {
+    if (anim.length) {
+        var observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                var el = entry.target;
+                if (entry.isIntersecting) {
+                    if (el.classList.contains('anim-js')) {
+
+                    } else {
+                        el.style.animationDelay = el.dataset.animDelay + 'ms';
+                        el.style.animationDuration = el.dataset.animDuration + 'ms';
+                        el.style.animationName = el.dataset.anim;
+                    }
+
+
+                    el.classList.add('done');
+                    // observer.unobserve(entry.target);
+                } else {
+                    el.classList.remove('done');
+                }
+
+            })
+        }, {threshold: .5});
+        if (window.innerWidth > 991) {
+            anim.forEach(animate => {
+                observer.observe(animate)
+            })
+        } else {
+
+            anim.forEach(animate => {
+
+                observer.observe(animate)
+
+
+            })
+        }
+    }
+}
+
+
+scrollAnimations();
+
+
+$(window).scroll(function (e) {
+    $el = $('body');
+    $el.toggleClass('show-fixed', $(this).scrollTop() > 72);
+
+});
+
 
 // Add an event listener listening for scroll
 
@@ -52,7 +104,7 @@ function goToSectionProg() {
             let el = document.querySelector(`.${numb}`);
             let currentOffset = 0;
             let dataDesk = btn.dataset.offsetDesk;
-            let dataMob = btn.dataset.offsetMob;
+            let dataMob = btn.dataset.offsetMod;
             if (window.innerWidth > 767) {
                 currentOffset = dataDesk;
             } else {
@@ -60,7 +112,8 @@ function goToSectionProg() {
             }
             // console.log(currentOffset);
             btn.addEventListener('click', () => {
-                console.log(currentOffset);
+                // console.log(btn);
+                // console.log(currentOffset);
                 $([document.documentElement, document.body]).animate({
                     scrollTop: $(el).offset().top + Number(currentOffset)
                 }, 500);

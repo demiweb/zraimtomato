@@ -6,6 +6,67 @@
     display: none;
   }
   //
+  .modal-window {
+    padding: 10px;
+  }
+  .modal-container {
+    width: 100%;
+    height: 75.0208vw;
+  }
+  .close-modal {
+    width: 7.5000vw;
+    height: 7.5000vw;
+    top: 2.7778vw;
+    right: 2.7778vw;
+    span {
+      height: 0.5556vw;
+      border-radius: 1.1111vw;
+    }
+  }
+  body {
+    &.show-fixed {
+      .mobile-footer {
+        transform: translate(0, 0);
+      }
+    }
+  }
+  .mobile-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    transition: all 0.3s ease-in-out;
+    transform: translate(0, 120%);
+
+    border-radius: 5.0000vw 5.0000vw 0px 0px;
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.16);
+    padding: 3.0556vw 7.5000vw 3.3333vw 6.9444vw;
+
+    .img {
+      width: 37.5000vw;
+      height: 13.0556vw;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .whats {
+      width: 12.2222vw;
+      height: 12.5000vw;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
   .link-btn {
     flex-direction: row-reverse;
     align-items: center;
@@ -125,11 +186,15 @@
       }
     }
   }
+  .footer {
+    z-index: 4;
+  }
   .contacts-section {
     height: auto;
     margin-top: -17.2222vw;
     padding-top: 24.6444vw;
     padding-bottom: 9.1667vw;
+    z-index: 4;
 
     .bg {
       display: none;
@@ -164,7 +229,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding-bottom:47.7778vw;
+    padding-bottom: 47.7778vw;
 
     h2 {
       font-weight: bold;
@@ -463,6 +528,20 @@
     align-items: center;
     justify-content: flex-start;
     margin-bottom: 18.3333vw;
+    &.done {
+      .round {
+        .bg {
+          svg {
+            &.circle {
+              circle {
+                stroke-dasharray: 886, 886 !important;
+              }
+            }
+
+          }
+        }
+      }
+    }
 
     &:first-child {
       margin-bottom: 0;
